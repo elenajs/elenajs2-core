@@ -1,3 +1,5 @@
+/* global Promise */
+
 "use strict";
 let RequestContext = require('./RequestContext.js'),
     HttpStatusError = require('./errors/HttpStatusError.js'),

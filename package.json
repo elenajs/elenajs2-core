@@ -23,6 +23,7 @@
   "license": "MIT",
   "dependencies": {
     "babel": "^5.8.23",
+    "es6-error": "^1.0.0",
     "es6-shim": "^0.33.2",
     "formidable": "^1.0.17",
     "fs-extra": "^0.12.0",

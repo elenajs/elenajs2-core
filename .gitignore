@@ -1,7 +1,9 @@
 *~
+nbproject/
 doc/api
 dist
 demobuild
 .idea
 *.iml
 node_modules
+/nbproject/private/
