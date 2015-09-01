@@ -1,8 +1,9 @@
 "use strict";
 
-let HttpStatus = require('../utils/HttpStatus.js');
+let HttpStatus = require('../utils/HttpStatus.js'),
+    ExtendableError = require('es6-error');
 
-class HttpStatusError extends Error {
+class HttpStatusError extends ExtendableError {
     constructor(statusCode, message) {
         super(message || statusCode + ' - ' + HttpStatus.getStatusDescription(statusCode));
         this._statusCode = statusCode;

@@ -6,11 +6,10 @@ var rmdir = require('rimraf');
 
 function babelify(src, dest) {
     return gulp.src(src)
-        //.pipe(_.watch(src))
         .pipe(_.changed(dest))
         .pipe(_.sourcemaps.init())
         .pipe(_.babel())
-        .pipe(_.sourcemaps.write('.'))
+        .pipe(_.sourcemaps.write('.', {sourceRoot: '../src'}))
         .pipe(gulp.dest(dest));
 }
 
@@ -26,7 +25,6 @@ gulp.task('clean', function() {
         err && console.error(err);
     });
 });
-
 
 gulp.task('build-demo', ['build-lib'], function () {
     return babelify('demo/**/*.js', 'demobuild');
