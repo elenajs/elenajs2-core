@@ -1,9 +1,8 @@
 "use strict";
 
-let fs = require('fs'),
-    mkdirp = require('mkdirp');
+require('gulp-polyfill');
 
-require('fs-extra');
+const fs = require('fs');
 
 function asDeferred(fn, self, noError) {
 
@@ -47,6 +46,5 @@ for (let functionName  in fs) {
         }
     }
 }
-dfs['mkdirp'] = asDeferred(mkdirp, mkdirp);
-dfs['mkdirpSync'] = mkdirp.sync;
+
 module.exports = dfs;

@@ -1,6 +1,6 @@
 "use strict";
 
-let _status = {
+module.exports = {
     "100": "Continue",
     "101": "Switching Protocols",
     "102": "Processing",
@@ -54,46 +54,3 @@ let _status = {
     "507": "Insufficient Storage",
     "511": "Network Authentication Required"
 };
-
-/**
- * Utils class to to represent http status for ejs2.
- * @class
- */
-class HttpStatus {
-    toString() {
-        let name = 'utils/HttpStatus';
-        return `[object ${name}]`;
-    }
-
-    static getStatusDescription(code) {
-        return _status[code.toString()];
-    }
-
-    /**
-     * Http status code
-     * @returns {int}
-     */
-    get code() {
-        return this._statusCode;
-    }
-
-    /**
-     * Status description. if not set in constructor the HTTP error transcodification is used.
-     * @returns {String }
-     */
-    get reason() {
-        return this._reason;
-    }
-
-    /**
-     * Class contructor
-     * @param {!int} code Required parameter, should be one of the http status codes
-     * @param {String} reason Optional pearameter that indicates the description of the status.
-     */
-    constructor(code, reason) {
-        let message = reason || _status[code.toString()] || "Unknown";
-        this._statusCode = parseInt(code);
-        this._reason = message;
-    }
-}
-module.exports = HttpStatus;

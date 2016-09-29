@@ -5,5 +5,5 @@ dist
 demobuild
 .idea
 *.iml
+*.log
 node_modules
-/nbproject/private/
